@@ -3,9 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Infrastructure", "EstudoDocker.Infrastructure", "{61AAA9FF-33AF-4283-97D7-8707C5C0A471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.ConfigKafka", "EstudoDocker.ConfigKafka\EstudoDocker.ConfigKafka.csproj", "{85005631-0AA9-4B7E-855D-AA25B57CAA90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.DataBase", "EstudoDocker.DataBase\EstudoDocker.DataBase.csproj", "{82B06A5D-7141-436E-AAEC-83521138BDDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Api", "EstudoDocker.Api", "{CF3BDE47-768E-49D3-977C-CB3494364110}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Domain", "EstudoDocker.Domain", "{32756A95-FFEE-462E-A2EA-1CF3B0E39C48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Application", "EstudoDocker.Application", "{0DA1BCC5-B16F-44D0-97B1-22DAFCD15D87}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85005631-0AA9-4B7E-855D-AA25B57CAA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85005631-0AA9-4B7E-855D-AA25B57CAA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85005631-0AA9-4B7E-855D-AA25B57CAA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85005631-0AA9-4B7E-855D-AA25B57CAA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85005631-0AA9-4B7E-855D-AA25B57CAA90} = {61AAA9FF-33AF-4283-97D7-8707C5C0A471}
+		{82B06A5D-7141-436E-AAEC-83521138BDDB} = {61AAA9FF-33AF-4283-97D7-8707C5C0A471}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EA8358E-3091-4F23-ADA9-91A930F58F57}
