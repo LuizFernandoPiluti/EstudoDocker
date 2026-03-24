@@ -1,4 +1,10 @@
+using EstudoDocker.Application.AutpMappers;
+using EstudoDocker.Application.Interfaces;
+using EstudoDocker.Application.Services;
+using EstudoDocker.DataBase.AutoMappers;
 using EstudoDocker.DataBase.Context;
+using EstudoDocker.DataBase.Repositories;
+using EstudoDocker.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,7 +20,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EstudoDockerDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EstudoDockerDB")));
 
-
+builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
+builder.Services.AddScoped<IPessoaService,PessoaService>();
+builder.Services.AddAutoMapper(cfg => 
+{ 
+    cfg.AddProfile(new AutoMaperDataProfile()); 
+});
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile(new AutoMaperApplicationProfile());
+});
 
 
 var app = builder.Build();

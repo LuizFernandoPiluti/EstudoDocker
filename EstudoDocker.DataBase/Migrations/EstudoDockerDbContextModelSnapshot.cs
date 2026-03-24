@@ -22,7 +22,7 @@ namespace EstudoDocker.DataBase.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("EstudoDocker.Domain.Model.Pesssoa", b =>
+            modelBuilder.Entity("EstudoDocker.Domain.Model.Person", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

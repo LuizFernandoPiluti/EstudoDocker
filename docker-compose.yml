@@ -37,3 +37,27 @@ services:
       KAFKA_BROKERCONNECT: "kafka1:19091"
     depends_on:
       - kafka1
+  mssqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=!Admin123
+      - name:sqlserver-tutorial
+      - hostname:sqlserver-tutorial
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+  webapi:
+    build:
+      context: .
+      dockerfile: ./EstudoDocker.WebApi/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - mssqlserver 
+volumes:
+  sql_data:

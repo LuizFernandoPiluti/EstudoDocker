@@ -12,8 +12,6 @@ namespace EstudoDocker.DataBase.Context
         {
         }
 
-
-
         public DbSet<Pesssoa> Pessoa{ get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
