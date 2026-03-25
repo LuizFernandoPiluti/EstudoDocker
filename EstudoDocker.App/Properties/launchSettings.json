@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EstudoDocker.App": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

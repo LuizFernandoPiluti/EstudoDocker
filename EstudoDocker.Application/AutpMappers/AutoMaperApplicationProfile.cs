@@ -3,6 +3,7 @@ using AutoMapper;
 using EstudoDocker.Application.Request;
 using EstudoDocker.Application.Response;
 using EstudoDocker.Domain.Dto;
+using EstudoDocker.Domain.Kafka;
 
 
 namespace EstudoDocker.Application.AutpMappers
@@ -11,7 +12,8 @@ namespace EstudoDocker.Application.AutpMappers
     {
         public AutoMaperApplicationProfile()
         {
-            CreateMap<PessoaRequest, PesssoaDto>();
+            CreateMap<PessoaRequest, PesssoaMensagem>()
+                .ForMember(dest => dest.TipoOperacao, opt => opt.Ignore());
             CreateMap<PesssoaDto, PessoaResponse>();
         }
     }

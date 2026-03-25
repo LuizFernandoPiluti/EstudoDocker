@@ -1,4 +1,6 @@
-﻿using EstudoDocker.Application.Interfaces;
+﻿using Confluent.Kafka;
+using EstudoDocker.Application.Interfaces;
+using EstudoDocker.Application.Request;
 using EstudoDocker.DataBase.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +13,11 @@ namespace EstudoDocker.WebApi.Controllers
     public class PessoaController : ControllerBase
     {
         private readonly IPessoaService _pessoaService;
-        public PessoaController(IPessoaService pessoaService)
+        private readonly IKafkaService _kafkaService;
+        public PessoaController(IPessoaService pessoaService, IKafkaService kafkaService)
         {
             _pessoaService = pessoaService;
+            _kafkaService = kafkaService;
         }
 
         [HttpGet]
@@ -22,6 +26,21 @@ namespace EstudoDocker.WebApi.Controllers
             var pessoa = await _pessoaService.GetAllAsync().ConfigureAwait(false);
 
             return Ok(pessoa);
+        }
+        [HttpPost]
+        public async Task<IActionResult> PostAsync(PessoaRequest pessoaRequest)
+        {
+            var status = await _kafkaService.ProducerMsgAsync(pessoaRequest).ConfigureAwait(false);
+            if (status)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+
+            }
+               
         }
     }
 }

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EstudoDocker.Application\EstudoDocker.Application.csproj" />
+    <ProjectReference Include="..\EstudoDocker.ConfigKafka\EstudoDocker.ConfigKafka.csproj" />
     <ProjectReference Include="..\EstudoDocker.DataBase\EstudoDocker.DataBase.csproj" />
   </ItemGroup>
 

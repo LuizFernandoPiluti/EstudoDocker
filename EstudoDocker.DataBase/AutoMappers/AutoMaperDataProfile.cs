@@ -8,7 +8,8 @@ namespace EstudoDocker.DataBase.AutoMappers
     {
         public AutoMaperDataProfile()
         {
-            CreateMap<Pesssoa, PesssoaDto>().ReverseMap();
+            CreateMap<Pesssoa, PesssoaDto>()
+                .ReverseMap();
         }
     }
 }

@@ -1,6 +1,8 @@
 using EstudoDocker.Application.AutpMappers;
 using EstudoDocker.Application.Interfaces;
 using EstudoDocker.Application.Services;
+using EstudoDocker.ConfigKafka.ConfigKafka;
+using EstudoDocker.ConfigKafka.Repository;
 using EstudoDocker.DataBase.AutoMappers;
 using EstudoDocker.DataBase.Context;
 using EstudoDocker.DataBase.Repositories;
@@ -21,7 +23,9 @@ builder.Services.AddDbContext<EstudoDockerDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EstudoDockerDB")));
 
 builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
+builder.Services.AddScoped<IKafkaRepository, KafkaRepository>();
 builder.Services.AddScoped<IPessoaService,PessoaService>();
+builder.Services.AddScoped<IKafkaService, KafkaService>();
 builder.Services.AddAutoMapper(cfg => 
 { 
     cfg.AddProfile(new AutoMaperDataProfile()); 
@@ -30,7 +34,7 @@ builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile(new AutoMaperApplicationProfile());
 });
-
+builder.Services.AddSingleton<KafkaConfig>();
 
 var app = builder.Build();
 
