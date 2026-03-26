@@ -21,7 +21,6 @@ namespace EstudoDocker.Application.Services
         {
             try
             {
-                //var pessoa = _mapper.Map<PesssoaDto>(pesssoa);
                 var pessoa = new PesssoaDto(Guid.NewGuid(),pesssoaRequest.Nome,pesssoaRequest.Idade); 
 
                await _pessoaRepository.AddAsync(pessoa).ConfigureAwait(false);

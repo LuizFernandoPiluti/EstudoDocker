@@ -30,14 +30,14 @@ namespace EstudoDocker.App
                         {
                             switch (p.TipoOperacao)
                             {
-                                case "Insert":
+                                case TipoInstrucaoEnum.Insert:
                                     await _pessoaService.AddAsync(p).ConfigureAwait(false);
                                     break;
-                                case "Update":
+                                case TipoInstrucaoEnum.Update:
                                     await _pessoaService.UpdateAsync(p).ConfigureAwait(false);
                                     break;
-                                case "Delete":
-                                   // await _pessoaService.DeleteAsync(p.Id).ConfigureAwait(false);
+                                case TipoInstrucaoEnum.Delete:
+                                    // await _pessoaService.DeleteAsync(p.Id).ConfigureAwait(false);
                                     break;
                             }
                         }

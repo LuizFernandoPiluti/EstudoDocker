@@ -1,5 +1,4 @@
 ﻿using EstudoDocker.Domain.Dto;
-using EstudoDocker.Domain.Model;
 
 namespace EstudoDocker.Domain.Interfaces.Repository
 {

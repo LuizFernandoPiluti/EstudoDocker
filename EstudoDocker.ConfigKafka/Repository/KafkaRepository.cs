@@ -4,7 +4,6 @@ using Confluent.Kafka;
 using EstudoDocker.ConfigKafka.ConfigKafka;
 using EstudoDocker.Domain.Interfaces.Repository;
 using EstudoDocker.Domain.Kafka;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace EstudoDocker.ConfigKafka.Repository

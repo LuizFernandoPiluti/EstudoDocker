@@ -12,14 +12,7 @@ namespace EstudoDocker.DataBase.Context
         {
         }
 
-        public DbSet<Pesssoa> Pessoa{ get; set; }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(connectionString: "Server=Localhost,1433;Database=EstudoDocker;User Id=sa;Password=!Admin123;TrustServerCertificate=True");
-        //    base.OnConfiguring(optionsBuilder);
-        //}
-   
+        public DbSet<Pesssoa> Pessoa{ get; set; }  
     
     }
 }

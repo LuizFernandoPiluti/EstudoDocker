@@ -1,10 +1,6 @@
-﻿using Confluent.Kafka;
-using EstudoDocker.Application.Interfaces;
+﻿using EstudoDocker.Application.Interfaces;
 using EstudoDocker.Application.Request;
-using EstudoDocker.DataBase.Context;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EstudoDocker.WebApi.Controllers
 {
