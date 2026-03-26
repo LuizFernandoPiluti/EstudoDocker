@@ -10,7 +10,7 @@ namespace EstudoDocker.Application.Interfaces
         Task<IEnumerable<PessoaResponse>> GetAllAsync();
         Task<PessoaResponse> GetByIdAsync(Guid id);
         Task AddAsync(PessoaRequest pesssoa);
-        Task UpdateAsync(PessoaRequest pesssoa);
+        Task UpdateAsync(PessoaUpdateRequest pesssoa);
         Task DeleteAsync(Guid id);
     }
 }

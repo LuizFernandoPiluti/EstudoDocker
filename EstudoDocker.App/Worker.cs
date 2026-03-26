@@ -2,6 +2,7 @@
 
 using EstudoDocker.Application.Interfaces;
 using EstudoDocker.Application.Request;
+using EstudoDocker.Domain.Kafka;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
 
@@ -25,16 +26,29 @@ namespace EstudoDocker.App
                     var msg = _kafkaService.ConsumerMsg();
                     if (!String.IsNullOrEmpty(msg))
                     {
-                        var p = JsonSerializer.Deserialize<PessoaRequest>(msg);
-                        if (p != null) 
+                        var pesssoaMensagem = JsonSerializer.Deserialize<PesssoaMensagem>(msg);
+                        if (pesssoaMensagem != null) 
                         {
-                            switch (p.TipoOperacao)
+                            TipoInstrucaoEnum tipoOperacao;
+                            Enum.TryParse<TipoInstrucaoEnum>(pesssoaMensagem.TipoOperacao, true, out tipoOperacao);
+                            switch (tipoOperacao)
                             {
                                 case TipoInstrucaoEnum.Insert:
-                                    await _pessoaService.AddAsync(p).ConfigureAwait(false);
+                                    var pessoaRequest = new PessoaRequest
+                                    {   
+                                        Nome = pesssoaMensagem.Nome,
+                                        Idade = pesssoaMensagem.Idade
+                                    };
+                                    await _pessoaService.AddAsync(pessoaRequest).ConfigureAwait(false);
                                     break;
                                 case TipoInstrucaoEnum.Update:
-                                    await _pessoaService.UpdateAsync(p).ConfigureAwait(false);
+                                    var pessoaUpdateRequest = new PessoaUpdateRequest
+                                    {
+                                        Id = pesssoaMensagem.Id,
+                                        Nome = pesssoaMensagem.Nome,
+                                        Idade = pesssoaMensagem.Idade
+                                    };
+                                    await _pessoaService.UpdateAsync(pessoaUpdateRequest).ConfigureAwait(false);
                                     break;
                                 case TipoInstrucaoEnum.Delete:
                                     // await _pessoaService.DeleteAsync(p.Id).ConfigureAwait(false);

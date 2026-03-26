@@ -27,9 +27,18 @@ namespace EstudoDocker.DataBase.Repositories
 
         public async Task DeleteAsync(PesssoaDto pesssoaDto)
         {
-            var pessoa = _mapper.Map<Pesssoa>(pesssoaDto);
-            _context.Pessoa.Remove(pessoa);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            try
+            {
+                var pessoa = _mapper.Map<Pesssoa>(pesssoaDto);
+                _context.Pessoa.Remove(pessoa);
+                await _context.SaveChangesAsync().ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+
+                throw ;
+            }
+        
         }
 
         public async Task DeleteAsync(Guid id)
@@ -40,13 +49,13 @@ namespace EstudoDocker.DataBase.Repositories
 
         public async Task<IEnumerable<PesssoaDto>> GetAllAsync()
         {
-            var pessoa = await _context.Pessoa.ToListAsync().ConfigureAwait(false);
+            var pessoa = await _context.Pessoa.AsNoTracking().ToListAsync().ConfigureAwait(false);
             return _mapper.Map<List<PesssoaDto>>(pessoa);    
         }
 
         public async Task<PesssoaDto> GetByIdAsync(Guid id)
         {
-            var pessoa = await _context.Pessoa.FirstOrDefaultAsync(x => x.Id == id).ConfigureAwait(false);
+            var pessoa = await _context.Pessoa.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id).ConfigureAwait(false);
             if (pessoa == null)
             {
                 return null;

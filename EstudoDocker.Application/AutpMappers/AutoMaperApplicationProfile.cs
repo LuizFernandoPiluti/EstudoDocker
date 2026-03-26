@@ -13,6 +13,7 @@ namespace EstudoDocker.Application.AutpMappers
         public AutoMaperApplicationProfile()
         {
             CreateMap<PessoaRequest, PesssoaMensagem>();
+            CreateMap<PessoaUpdateRequest, PesssoaMensagem>();
 
             CreateMap<PesssoaDto, PessoaResponse>();
            

@@ -38,5 +38,34 @@ namespace EstudoDocker.WebApi.Controllers
             }
                
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(PessoaUpdateRequest pessoaUpdateRequest)
+        {
+
+            var status = await _kafkaService.ProducerMsgUpdateAsync(pessoaUpdateRequest).ConfigureAwait(false);
+            if (status)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+
+            }
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAsync([FromBody] Guid id )
+        {
+            try
+            {
+                await _pessoaService.DeleteAsync(id).ConfigureAwait(false);
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
     }
 }

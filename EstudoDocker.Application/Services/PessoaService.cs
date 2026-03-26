@@ -74,10 +74,10 @@ namespace EstudoDocker.Application.Services
             }
         }
 
-        public async Task UpdateAsync(PessoaRequest pesssoa)
+        public async Task UpdateAsync(PessoaUpdateRequest pesssoaRequest)
         {
-            var pessoa = _mapper.Map<PesssoaDto>(pesssoa);
-            await _pessoaRepository.AddAsync(pessoa).ConfigureAwait(false);
+            var pessoa = new PesssoaDto(pesssoaRequest.Id,pesssoaRequest.Nome, pesssoaRequest.Idade);
+            await _pessoaRepository.UpdateAsync(pessoa).ConfigureAwait(false);
         }
     }
 }

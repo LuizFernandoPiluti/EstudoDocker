@@ -33,5 +33,17 @@ namespace EstudoDocker.Application.Services
             var status = await _kafkaRepository.ProducerMsgAsync(pessoa).ConfigureAwait(false);
             return status;
         }
+        public async Task<bool> ProducerMsgUpdateAsync(PessoaUpdateRequest pessoaRequest)
+        {
+            var pessoa = new PesssoaMensagem
+            {
+                Id = pessoaRequest.Id,
+                Nome = pessoaRequest.Nome,
+                Idade = pessoaRequest.Idade,
+                TipoOperacao = pessoaRequest.TipoOperacao.ToString(),
+            };
+            var status = await _kafkaRepository.ProducerMsgAsync(pessoa).ConfigureAwait(false);
+            return status;
+        }
     }
 }
