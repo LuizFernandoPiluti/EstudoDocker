@@ -17,11 +17,13 @@ namespace EstudoDocker.Application.Services
             _pessoaRepository = pessoaRepository;
             _mapper = mapper;
         }
-        public async Task AddAsync(PessoaRequest pesssoa)
+        public async Task AddAsync(PessoaRequest pesssoaRequest)
         {
             try
             {
-                var pessoa = _mapper.Map<PesssoaDto>(pesssoa);
+                //var pessoa = _mapper.Map<PesssoaDto>(pesssoa);
+                var pessoa = new PesssoaDto(Guid.NewGuid(),pesssoaRequest.Nome,pesssoaRequest.Idade); 
+
                await _pessoaRepository.AddAsync(pessoa).ConfigureAwait(false);
             }
             catch (Exception)

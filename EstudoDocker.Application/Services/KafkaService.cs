@@ -24,7 +24,13 @@ namespace EstudoDocker.Application.Services
 
         public async Task<bool> ProducerMsgAsync(PessoaRequest pessoaRequest)
         {
-            var pessoa = _mapper.Map<PesssoaMensagem>(pessoaRequest);
+            //var pessoa = _mapper.Map<PesssoaMensagem>(pessoaRequest);
+            var pessoa = new PesssoaMensagem {
+                Id = Guid.NewGuid(),
+                Nome = pessoaRequest.Nome,
+                Idade = pessoaRequest.Idade,
+                TipoOperacao = pessoaRequest.TipoOperacao,
+            };
             var status = await _kafkaRepository.ProducerMsgAsync(pessoa).ConfigureAwait(false);
             return status;
         }

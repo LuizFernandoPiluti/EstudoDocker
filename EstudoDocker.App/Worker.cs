@@ -37,7 +37,7 @@ namespace EstudoDocker.App
                                     await _pessoaService.UpdateAsync(p).ConfigureAwait(false);
                                     break;
                                 case "Delete":
-                                    await _pessoaService.DeleteAsync(p.Id).ConfigureAwait(false);
+                                   // await _pessoaService.DeleteAsync(p.Id).ConfigureAwait(false);
                                     break;
                             }
                         }

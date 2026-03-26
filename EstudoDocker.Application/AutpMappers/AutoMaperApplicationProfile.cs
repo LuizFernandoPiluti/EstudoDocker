@@ -12,9 +12,10 @@ namespace EstudoDocker.Application.AutpMappers
     {
         public AutoMaperApplicationProfile()
         {
-            CreateMap<PessoaRequest, PesssoaMensagem>()
-                .ForMember(dest => dest.TipoOperacao, opt => opt.Ignore());
+            CreateMap<PessoaRequest, PesssoaMensagem>();
+
             CreateMap<PesssoaDto, PessoaResponse>();
+           
         }
     }
 }

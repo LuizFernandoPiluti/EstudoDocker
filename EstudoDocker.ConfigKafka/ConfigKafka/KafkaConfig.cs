@@ -13,7 +13,7 @@ namespace EstudoDocker.ConfigKafka.ConfigKafka
         {
             GroupId = "estudo-docker-group";
             // BootstrapServers = "127.0.0.1:9091";
-            BootstrapServers = "localhost:9091";
+            BootstrapServers = "kafka1:19091";
             AutoOffsetReset = AutoOffsetReset.Earliest;
             Topic = "Estudo-kafka";
         }
