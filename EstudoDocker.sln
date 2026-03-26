@@ -15,6 +15,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Domain", "Estu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Application", "EstudoDocker.Application", "{0DA1BCC5-B16F-44D0-97B1-22DAFCD15D87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.Domain", "EstudoDocker.Domain\EstudoDocker.Domain.csproj", "{674E4F8C-F986-4C7E-AE65-22C543E23BD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.WebApi", "EstudoDocker.WebApi\EstudoDocker.WebApi.csproj", "{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.Application", "EstudoDocker.Application\EstudoDocker.Application.csproj", "{3979E073-14C2-451E-9932-E38A126EA3B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.App", "EstudoDocker.App", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.App", "EstudoDocker.App\EstudoDocker.App.csproj", "{E0842218-CC98-4B25-8799-A25361C2BB23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +44,22 @@ Global
 		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B06A5D-7141-436E-AAEC-83521138BDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674E4F8C-F986-4C7E-AE65-22C543E23BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674E4F8C-F986-4C7E-AE65-22C543E23BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674E4F8C-F986-4C7E-AE65-22C543E23BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674E4F8C-F986-4C7E-AE65-22C543E23BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3979E073-14C2-451E-9932-E38A126EA3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979E073-14C2-451E-9932-E38A126EA3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3979E073-14C2-451E-9932-E38A126EA3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3979E073-14C2-451E-9932-E38A126EA3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0842218-CC98-4B25-8799-A25361C2BB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0842218-CC98-4B25-8799-A25361C2BB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0842218-CC98-4B25-8799-A25361C2BB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0842218-CC98-4B25-8799-A25361C2BB23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +67,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{85005631-0AA9-4B7E-855D-AA25B57CAA90} = {61AAA9FF-33AF-4283-97D7-8707C5C0A471}
 		{82B06A5D-7141-436E-AAEC-83521138BDDB} = {61AAA9FF-33AF-4283-97D7-8707C5C0A471}
+		{674E4F8C-F986-4C7E-AE65-22C543E23BD3} = {32756A95-FFEE-462E-A2EA-1CF3B0E39C48}
+		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85} = {CF3BDE47-768E-49D3-977C-CB3494364110}
+		{3979E073-14C2-451E-9932-E38A126EA3B3} = {0DA1BCC5-B16F-44D0-97B1-22DAFCD15D87}
+		{E0842218-CC98-4B25-8799-A25361C2BB23} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EA8358E-3091-4F23-ADA9-91A930F58F57}
