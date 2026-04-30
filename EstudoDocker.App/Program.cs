@@ -37,6 +37,7 @@ builder.Services.AddSingleton<KafkaConfig>();
 
 builder.Services.AddHostedService<Worker>();
 
+
 var app = builder.Build();
 
 

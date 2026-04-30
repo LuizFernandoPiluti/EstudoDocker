@@ -7,6 +7,7 @@ using EstudoDocker.DataBase.AutoMappers;
 using EstudoDocker.DataBase.Context;
 using EstudoDocker.DataBase.Repositories;
 using EstudoDocker.Domain.Interfaces.Repository;
+using EstudoDocker.WebApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -26,6 +27,9 @@ builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
 builder.Services.AddScoped<IKafkaRepository, KafkaRepository>();
 builder.Services.AddScoped<IPessoaService,PessoaService>();
 builder.Services.AddScoped<IKafkaService, KafkaService>();
+
+builder.Services.AddTransient<GlobalException>();
+
 builder.Services.AddAutoMapper(cfg => 
 { 
     cfg.AddProfile(new AutoMaperDataProfile()); 
@@ -48,6 +52,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<GlobalException>();
 
 app.MapControllers();
 

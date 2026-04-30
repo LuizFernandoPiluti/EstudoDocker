@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35327.3
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Infrastructure", "EstudoDocker.Infrastructure", "{61AAA9FF-33AF-4283-97D7-8707C5C0A471}"
 EndProject
@@ -29,6 +29,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.App", "EstudoDocker.App", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.App", "EstudoDocker.App\EstudoDocker.App.csproj", "{E0842218-CC98-4B25-8799-A25361C2BB23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EstudoDocker.Testes", "EstudoDocker.Testes", "{943D5977-3F04-474B-B43F-5EF8B1766CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstudoDocker.Application.Test", "EstudoDocker.Application.Test\EstudoDocker.Application.Test.csproj", "{8C4814B0-860C-4A08-9992-A723F4BD171A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +64,10 @@ Global
 		{E0842218-CC98-4B25-8799-A25361C2BB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0842218-CC98-4B25-8799-A25361C2BB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0842218-CC98-4B25-8799-A25361C2BB23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4814B0-860C-4A08-9992-A723F4BD171A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4814B0-860C-4A08-9992-A723F4BD171A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4814B0-860C-4A08-9992-A723F4BD171A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4814B0-860C-4A08-9992-A723F4BD171A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,7 @@ Global
 		{3CA0CBBA-98DB-4B00-8D0C-74DF04E2FC85} = {CF3BDE47-768E-49D3-977C-CB3494364110}
 		{3979E073-14C2-451E-9932-E38A126EA3B3} = {0DA1BCC5-B16F-44D0-97B1-22DAFCD15D87}
 		{E0842218-CC98-4B25-8799-A25361C2BB23} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8C4814B0-860C-4A08-9992-A723F4BD171A} = {943D5977-3F04-474B-B43F-5EF8B1766CD4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EA8358E-3091-4F23-ADA9-91A930F58F57}

@@ -3,6 +3,7 @@ using AutoMapper;
 using EstudoDocker.Application.Interfaces;
 using EstudoDocker.Application.Request;
 using EstudoDocker.Application.Response;
+using EstudoDocker.Application.Validations;
 using EstudoDocker.Domain.Dto;
 using EstudoDocker.Domain.Interfaces.Repository;
 
@@ -21,6 +22,15 @@ namespace EstudoDocker.Application.Services
         {
             try
             {
+                ValidacaoPessoa.ValidarPessoa(pesssoaRequest);
+
+                if (!ValidacaoPessoa.StatusValidacao)
+                {
+                    if (ValidacaoPessoa.MensagemValidacao.Any() && ValidacaoPessoa.MensagemValidacao.Count > 0)
+                    {
+                        throw new Exception(ValidacaoPessoa.MensagemValidacao.ToList().ToString());
+                    }
+                }
                 var pessoa = new PesssoaDto(Guid.NewGuid(),pesssoaRequest.Nome,pesssoaRequest.Idade); 
 
                await _pessoaRepository.AddAsync(pessoa).ConfigureAwait(false);
