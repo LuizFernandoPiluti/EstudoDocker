@@ -2,6 +2,7 @@
 using AutoMapper;
 using EstudoDocker.Application.Interfaces;
 using EstudoDocker.Application.Request;
+using EstudoDocker.Application.Validations;
 using EstudoDocker.Domain.Interfaces.Repository;
 using EstudoDocker.Domain.Kafka;
 
@@ -24,6 +25,18 @@ namespace EstudoDocker.Application.Services
 
         public async Task<bool> ProducerMsgAsync(PessoaRequest pessoaRequest)
         {
+            ValidacaoPessoa.ValidarPessoa(pessoaRequest);
+
+            if (!ValidacaoPessoa.StatusValidacao)
+            {
+                if (!string.IsNullOrEmpty(ValidacaoPessoa.MensagemValidacao))
+                {
+
+                    throw new Exception(ValidacaoPessoa.MensagemValidacao);
+                }
+            }
+
+
             var pessoa = new PesssoaMensagem {
                 Id = Guid.NewGuid(),
                 Nome = pessoaRequest.Nome,

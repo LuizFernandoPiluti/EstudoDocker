@@ -7,7 +7,7 @@ namespace EstudoDocker.Application.Validations
     {
     
         public static bool StatusValidacao { get; private set; }
-        public static IList<string> MensagemValidacao { get; } = new List<string>();
+        public static string MensagemValidacao { get; private set; } = string.Empty;
         private static bool ValidarIdade(int idade)
         {
             return idade >= 18;
@@ -32,11 +32,11 @@ namespace EstudoDocker.Application.Validations
 
             if (!validarNome)
             {
-                MensagemValidacao.Add("O nome é inválido.");
+                MensagemValidacao += string.Concat(MensagemValidacao,"/","O nome é inválido.");
             }
             if (!validarIdade)
             {
-                MensagemValidacao.Add("Idade minima para cadastro é 18 anos.");
+                MensagemValidacao += string.Concat(MensagemValidacao, "/", "Idade minima para cadastro é 18 anos.");
             }
         }
     }

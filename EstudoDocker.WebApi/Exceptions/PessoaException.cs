@@ -9,7 +9,7 @@ namespace EstudoDocker.WebApi.Exceptions
         {
             string msg = string.Empty;
 
-            msg = exception.ToString(); 
+            msg = exception.Message.ToString(); 
 
 
             return msg;

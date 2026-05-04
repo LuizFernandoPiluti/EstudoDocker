@@ -26,9 +26,10 @@ namespace EstudoDocker.Application.Services
 
                 if (!ValidacaoPessoa.StatusValidacao)
                 {
-                    if (ValidacaoPessoa.MensagemValidacao.Any() && ValidacaoPessoa.MensagemValidacao.Count > 0)
+                    if (!string.IsNullOrEmpty(ValidacaoPessoa.MensagemValidacao))
                     {
-                        throw new Exception(ValidacaoPessoa.MensagemValidacao.ToList().ToString());
+                      
+                        throw new Exception(ValidacaoPessoa.MensagemValidacao);
                     }
                 }
                 var pessoa = new PesssoaDto(Guid.NewGuid(),pesssoaRequest.Nome,pesssoaRequest.Idade); 
